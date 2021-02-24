@@ -1,0 +1,864 @@
+@charset "UTF-8";
+/*
+    Theme Name:   THEME
+    Description:  WordPress ORIGINAL THEME.
+    Theme URI:    MYURI
+    Author:       Junichi Takabatake
+    Version:      1.0.0
+    License:      GNU General Public License v3 or later
+    License URI:  https://www.gnu.org/licenses/gpl-3.0.html
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+em,
+small,
+strong,
+sub,
+sup,
+mark,
+del,
+ins,
+strike,
+abbr,
+dfn,
+blockquote,
+q,
+cite,
+code,
+pre,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+div,
+section,
+article,
+main,
+aside,
+nav,
+header,
+hgroup,
+footer,
+img,
+figure,
+figcaption,
+address,
+time,
+audio,
+video,
+canvas,
+iframe,
+details,
+summary,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* --------------------------------
+* anchor
+* -------------------------------- */
+a {
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+    vertical-align: baseline;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    outline-width: 0;
+}
+
+/* --------------------------------
+* abbr
+* -------------------------------- */
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+/* --------------------------------
+* blockquote
+* -------------------------------- */
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+/* --------------------------------
+* button
+* -------------------------------- */
+button {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    outline: none;
+    padding: 0;
+}
+
+/* --------------------------------
+* del
+* -------------------------------- */
+del {
+    text-decoration: line-through;
+}
+
+/* --------------------------------
+* h1 - h6
+* -------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    display: block;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+/* --------------------------------
+* hr + i
+* -------------------------------- */
+hr {
+    border: 0;
+    border-top: 1px solid #cccccc;
+    display: block;
+    height: 1px;
+    margin: 1em 0;
+    padding: 0;
+}
+
+i {
+    display: block;
+}
+
+/* --------------------------------
+* img
+* -------------------------------- */
+img {
+    border: none;
+    border-style: none;
+    height: auto;
+    max-height: 100%;
+    vertical-align: top;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+/* --------------------------------
+* input
+* -------------------------------- */
+input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+}
+
+input[type=text],
+input[type=search],
+input[type=tel],
+input[type=url],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=datetime],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=number],
+input[type=submit],
+input[type=button] {
+    max-width: 100%;
+}
+
+input:focus,
+textarea:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+input[type=radio]:checked + label {
+    background: #ff0000;
+}
+
+input[type=submit] {
+    text-decoration: none;
+}
+
+/* --------------------------------
+* ins
+* -------------------------------- */
+ins {
+    background-color: #ffff99;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* --------------------------------
+* list
+* -------------------------------- */
+li,
+ol {
+    list-style: none;
+    list-style-type: none;
+}
+
+/* --------------------------------
+* label + legend
+* -------------------------------- */
+label {
+    cursor: pointer;
+}
+
+legend {
+    color: #000000;
+}
+
+/* --------------------------------
+* mark
+* -------------------------------- */
+mark {
+    background-color: #ffff99;
+    color: #000000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* --------------------------------
+* select
+* -------------------------------- */
+select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    padding: 0;
+}
+
+/* --------------------------------
+* table
+* -------------------------------- */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* --------------------------------
+* textarea
+* -------------------------------- */
+textarea {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    padding: 0;
+    resize: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+[disabled] {
+    cursor: not-allowed;
+}
+
+[hover] {
+    border: none;
+    outline: none;
+}
+
+/*
+ * @list {wrapper}
+ * --theme-wrapper-PC {px}
+ * --theme-wrapper-SP {px}
+ */
+/*
+ * @list {Media Query}
+ * --theme-screen-max PC {px}
+ * --theme-screen-max TB {px}
+ * --theme-screen-max SP {px}
+ */
+/*
+ * @list {Media Query}
+ * --theme-screen-min PC {px}
+ * --theme-screen-min TB {px}
+ * --theme-screen-min SP {px}
+ */
+/*
+ * @map {z-index}
+ * --theme-header-Main
+ * --theme-header-logo
+ * --theme-topScroll-btn
+ * --theme-spFooterFixed-item
+ * --theme-spDrawer-overlay
+ * --theme-spDrawer-list
+ * --theme-spDrawer-btn
+ */
+/* hover */
+/* border-radius */
+/* transition */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    color: inherit;
+    font-family: inherit;
+    line-height: 1.2em;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+}
+
+.h1 {
+    font-size: 40px;
+}
+
+.h2 {
+    font-size: 32px;
+}
+
+.h3 {
+    font-size: 28px;
+}
+
+.h4 {
+    font-size: 24px;
+}
+
+.h5 {
+    font-size: 20px;
+}
+
+.h6 {
+    font-size: 16px;
+}
+
+.h1-small {
+    font-size: 32px;
+}
+
+.h2-small {
+    font-size: 25.6px;
+}
+
+.h3-small {
+    font-size: 22.4px;
+}
+
+.h4-small {
+    font-size: 24px;
+}
+
+.h5-small {
+    font-size: 16px;
+}
+
+.display-01 {
+    font-size: 90px;
+}
+
+.display-02 {
+    font-size: 82.5px;
+}
+
+.display-03 {
+    font-size: 67.5px;
+}
+
+.display-04 {
+    font-size: 52.5px;
+}
+
+.instagram::before {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.facebook::before {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.twitter::before {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.youtube::before {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.rss::before {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.linkshare::before {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.history::before {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.checkmark::before {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* rem */
+/* z-index auto num */
+/*
+ * @list {theme}
+ * --theme-color-primary {hex}
+ * --theme-color-secondary {hex}
+ * --theme-color-tags {hex}
+ * --theme-color-breadcrumb {hex}
+ */
+/*
+ * @list {color base}
+ * --lite-gray {hex}
+ * --white {hex}
+ * --blue {hex}
+ * --gray {hex}
+ * --green {hex}
+ * --red {hex}
+ * --yellow {hex}
+ * --liteblue {hex}
+ * --cyanos {hex}
+ * --darkGray {hex}
+ * --transparent {hex}
+*/
+/*
+ * @list {sns Icon color}
+ * --twitter {hex}
+ * --facebook {hex}
+ * --hatena {hex}
+ * --Pocket {hex}
+ * --RSS {hex}
+*/
+html {
+    font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+    html {
+        font-size: 14.4px;
+    }
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+}
+
+.wrapper {
+    overflow-x: hidden;
+}
+
+.ly-inner {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1100px;
+}
+@media screen and (max-width: 1099px) {
+    .ly-inner {
+        padding: 0 40px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .ly-inner {
+        padding: 0 32px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .ly-inner {
+        padding: 0 16px;
+    }
+}
+
+.ly-sm__container {
+    margin: 0 auto;
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 800px;
+}
+
+.mod-header__main {
+    background-color: inherit;
+    color: #333333;
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: 1;
+}
+.mod-header__main .mod-header__inner {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.mod-header__main .mod-header__logo a {
+    display: block;
+    font-family: "Spectral SC", serif;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 40px;
+    transition: all 0.3s ease 0s;
+    z-index: 2;
+}
+.mod-header__main .mod-header__description {
+    font-size: 1rem;
+    margin-left: 16px;
+}
+
+.mod-header-nav {
+    margin-left: auto;
+}
+.mod-header-nav .mod-header-nav__list {
+    align-items: center;
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: flex-start;
+}
+.mod-header-nav .mod-header-nav__list .-navItem {
+    display: inline-block;
+    padding: 8px 0;
+}
+.mod-header-nav .mod-header-nav__list .-navItem a {
+    display: block;
+    padding: 0 16px;
+    transition: all 0.3s ease 0s;
+}
+.mod-header-nav .mod-header-nav__list .-navItem + .-navItem {
+    margin-left: 8px;
+}
+@media screen and (max-width: 991px) {
+    .mod-header-nav {
+        display: none;
+    }
+}
+
+.mod-drawer__container .mod-drawer__button {
+    cursor: pointer;
+    display: inline-block;
+    height: 56px;
+    overflow: hidden;
+    padding: 4px;
+    position: fixed;
+    right: 4vw;
+    top: 14px;
+    width: 56px;
+    z-index: 8;
+}
+@media screen and (max-width: 991px) {
+    .mod-drawer__container .mod-drawer__button {
+        top: 16px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .mod-drawer__container .mod-drawer__button {
+        top: 16px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .mod-drawer__container .mod-drawer__button {
+        right: 5px;
+        top: 16px;
+    }
+}
+.mod-drawer__container .mod-drawer__button::after {
+    content: "";
+    display: block;
+    position: relative;
+}
+.mod-drawer__container .mod-drawer__button .button-line {
+    background-color: #333333;
+    height: 2px;
+    left: 24%;
+    margin: 0 auto;
+    position: absolute;
+    transition: all 0.3s ease-out 0s;
+    user-select: none;
+    width: 32px;
+}
+.mod-drawer__container .mod-drawer__button .button-line--1 {
+    top: 17px;
+}
+.mod-drawer__container .mod-drawer__button .button-line--2 {
+    top: 27px;
+}
+.mod-drawer__container .mod-drawer__button .button-line--3 {
+    top: 37px;
+}
+.mod-drawer__container .mod-drawer__button[aria-expanded=true] .button-line {
+    background-color: #333333;
+}
+.mod-drawer__container .mod-drawer__button[aria-expanded=true] .button-line--1 {
+    top: 27px;
+    transform: rotate(45deg);
+}
+.mod-drawer__container .mod-drawer__button[aria-expanded=true] .button-line--2 {
+    left: 50%;
+    width: 0;
+}
+.mod-drawer__container .mod-drawer__button[aria-expanded=true] .button-line--3 {
+    top: 27px;
+    transform: rotate(-45deg);
+}
+.mod-drawer__container .mod-drawer__overlay {
+    background-color: #000000;
+    cursor: pointer;
+    height: 100vh;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+    width: 100%;
+    z-index: 6;
+}
+.mod-drawer__container .mod-drawer__overlay[data-focus-visible=true] {
+    opacity: 0.8;
+    visibility: visible;
+}
+.mod-drawer__container .mod-drawer__navigation .mod-drawer-nav__list {
+    background-color: #ffffff;
+    font-family: "Noto Sans JP", serif;
+    font-size: 18px;
+    font-weight: 400;
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 52px;
+    position: fixed;
+    right: -320px;
+    top: 0;
+    transition: all 0.3s ease-out 0s;
+    width: 320px;
+    z-index: 7;
+}
+.mod-drawer__container .mod-drawer__navigation .mod-drawer-nav__list[aria-hidden=false] {
+    right: 0;
+}
+.mod-drawer__container .mod-drawer__navigation .mod-drawer-nav__list .-navItem a {
+    display: inline-block;
+    padding: 14px 24px;
+    width: 100%;
+}
+@media screen and (min-width: 992px) {
+    .mod-drawer__container {
+        display: none;
+    }
+}
+
+.c-topScroll-btn {
+    align-items: center;
+    background: #333333;
+    border: none;
+    bottom: 16px;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 20px;
+    transition: all 0.3s ease 0s;
+    width: 50px;
+    z-index: 4;
+}
+.c-topScroll-btn .topScroll-Icon {
+    border-left: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    display: block;
+    height: 16px;
+    position: relative;
+    top: 5px;
+    transform: rotate(45deg);
+    width: 16px;
+}
+.c-topScroll-btn.is-topScroll {
+    bottom: 32px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.u-flex {
+    display: flex;
+}
+
+.u-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.u-flex-bet {
+    display: flex;
+    justify-content: space-between;
+}
+
+.u-flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.u-flex-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.u-flex-column {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.u-flex-none {
+    display: block !important;
+}
+
+.u-visual-hidden {
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+}
+
+.u-under-line {
+    border-bottom: 1px solid;
+}
+
+.u-uppercase {
+    text-transform: uppercase;
+}
+
+.u-capitalize {
+    text-transform: capitalize;
+}
+
+.u-brsp {
+    display: none;
+}
+
+.u-brpc {
+    display: inline-block;
+}
+
+@media screen and (max-width: 767px) {
+    .u-brsp {
+        display: inline-block;
+    }
+
+    .u-brpc {
+        display: none;
+    }
+}
+/*# sourceMappingURL=style.css.map */

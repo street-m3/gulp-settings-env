@@ -1,0 +1,110 @@
+//SETTING FONTS
+$basefont-family: "Noto Sans JP", sans-serif;
+$logofont-family: 'Spectral SC', serif;
+$basefont-size: 16;
+$spfont-size: 14.4;
+//Letter-spacingの基準値
+$letter-spacing: 0.02em;
+$font-future-setting: palt 1;
+
+.h1,.h2,.h3,.h4,.h5,.h6 {
+    color: inherit;
+    font-family: inherit;
+    line-height: 1.2em;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+}
+
+//HEADING
+.h1 {
+    font-size: 40px;
+}
+.h2 {
+    font-size: 32px;
+}
+.h3 {
+    font-size: 28px;
+}
+.h4 {
+    font-size: 24px;
+}
+.h5 {
+    font-size: 20px;
+}
+.h6 {
+    font-size: 16px;
+}
+
+.h1-small {
+    font-size: 32px;
+}
+.h2-small {
+    font-size: 25.6px;
+}
+.h3-small {
+    font-size: 22.4px;
+}
+.h4-small {
+    font-size: 24px;
+}
+.h5-small {
+    font-size: 16px;
+}
+
+.display-01 {
+    font-size: 90px;
+}
+.display-02 {
+    font-size: 82.5px;
+}
+.display-03 {
+    font-size: 67.5px;
+}
+.display-04 {
+    font-size: 52.5px;
+}
+
+//FONT-AWESOME
+$Awesome: "Font Awesome 5 Free";
+
+// UTILITY ICON CODE
+.instagram::before {
+    content: "\f16d";
+    font-family: $Awesome;
+    font-weight: 900;
+}
+.facebook::before {
+    content: "\f09a";
+    font-family: $Awesome;
+    font-weight: 900;
+}
+.twitter::before {
+    content: "\f099";
+    font-family: $Awesome;
+    font-weight: 900;
+}
+.youtube::before {
+    content: "\f167";
+    font-family: $Awesome;
+    font-weight: 900;
+}
+.rss::before {
+    content: "\f09e";
+    font-family: $Awesome;
+    font-weight: 900;
+}
+.linkshare::before {
+    content: "\f14d";
+    font-family: $Awesome;
+    font-weight: 900;
+}
+.history::before {
+    content: "\f1da";
+    font-family: $Awesome;
+    font-weight: 900;
+}
+.checkmark::before {
+    content: "\f00c";
+    font-family: $Awesome;
+    font-weight: 900;
+}

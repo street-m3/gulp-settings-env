@@ -1,0 +1,109 @@
+{
+	"mdia query min-width": {
+		"prefix": "mqmin",
+		"body": [
+			"@include g.media-screen-up (g.\\$media-$1-up) {",
+			"\t",
+			"}"
+		],
+		"description": "sass snippet for min-width media query"
+	},
+
+	"mdia query max-width": {
+		"prefix": "mqmax",
+		"body": [
+			"@include g.media-screen-down (g.\\$media-$1-down) {",
+			"\t",
+			"}"
+		],
+		"description": "sass snippet for max-width media query"
+	},
+
+	"mdia query min and max width between": {
+		"prefix": "mqbet",
+		"body": [
+			"@include g.media-screen-between (g.\\$media-$1-down) {",
+			"\t",
+			"}"
+		],
+		"description": "sass snippet for min-width ~ max-width media query"
+	},
+
+	"position absolute center": {
+		"prefix": "position-center",
+		"body": [
+			"position: absolute;",
+			"top: 50%;",
+			"left: 50%",
+			"transform: translate(-50%, -50%);"
+		],
+		"description": "position absolute snippet"
+	},
+
+	"position absolute zero": {
+		"prefix": "position-corner",
+		"body": [
+			"position: absolute;",
+			"top: 0;",
+			"right: 0;",
+			"bottom: 0;",
+			"left: 0;"
+		],
+		"description": "position absolute -zero- snippet"
+	},
+
+	"display flex wrap content": {
+		"prefix": "flex-wrap",
+		"body": [
+			"display: flex;",
+			"flex-wrap: wrap;"
+		],
+		"description": "display flex and flex-wrap => wrap snippet"
+	},
+
+	"display flex center position": {
+		"prefix": "flex-center",
+		"body": [
+			"display: flex;",
+			"justify-content: center;",
+			"align-items: center;"
+		],
+		"description": "display flex position center snippet"
+	},
+
+	"font-size rem changer": {
+		"prefix": "rem",
+		"body": [
+			"font-size: g.rem($1);"
+		],
+		"description": "font-size px => rem change"
+	},
+
+	"transition all utility": {
+		"prefix": "transitionAll",
+		"body": [
+			"transition: g.$transitionAll;"
+		],
+		"description": "transition versatile"
+	},
+
+	"background-image all utility": {
+		"prefix": "setimage",
+		"body": [
+			"background-image: url($1);",
+			"background-position: center top;",
+			"background-repeat: no-repeat;",
+			"background-size: cover;"
+		],
+		"description": "background-image default setup!"
+	},
+	"logo font-family snippet": {
+		"prefix": "logo-font",
+		"body": [
+			"font-family: g.$logo-font-setting;"
+		],
+		"description": "logo-main font-family default setup!"
+	},
+	// end
+
+}

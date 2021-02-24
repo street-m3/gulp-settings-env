@@ -1,0 +1,43 @@
+/*
+ * @list {theme}
+ * --theme-color-primary {hex}
+ * --theme-color-secondary {hex}
+ * --theme-color-tags {hex}
+ * --theme-color-breadcrumb {hex}
+ */
+$color-primary : #333333; $tags: #555555; $text-primary: #333333;
+$breadcrumb: #6e6e6e;
+
+/*
+ * @list {color base}
+ * --lite-gray {hex}
+ * --white {hex}
+ * --blue {hex}
+ * --gray {hex}
+ * --green {hex}
+ * --red {hex}
+ * --yellow {hex}
+ * --liteblue {hex}
+ * --cyanos {hex}
+ * --darkGray {hex}
+ * --transparent {hex}
+*/
+
+$lite-gray:#cccccc; $white    :#ffffff; $blue     :#007aff;
+$gray     :#6c767d; $green    :#27a745; $red      :#dc3444;
+$yellow   :#ffc108; $liteBlue :#18a2b9; $septenary:#f8f9fb;
+$darkGray :#353a40;
+
+/*
+ * @list {sns Icon color}
+ * --twitter {hex}
+ * --facebook {hex}
+ * --hatena {hex}
+ * --Pocket {hex}
+ * --RSS {hex}
+*/
+$twitter  :#1DA1F2; $facebook :#1877f2; $hatena   :#008fde;
+$pocket   :#ef3e56; $rss      :#fe7710;
+
+//gradation
+$photo-gradient: linear-gradient(to bottom, transparent 0%, transparent 35%, rgba(0, 0, 0, 0.2) 100%);

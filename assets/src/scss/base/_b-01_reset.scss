@@ -1,0 +1,351 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+em,
+small,
+strong,
+sub,
+sup,
+mark,
+del,
+ins,
+strike,
+abbr,
+dfn,
+blockquote,
+q,
+cite,
+code,
+pre,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+div,
+section,
+article,
+main,
+aside,
+nav,
+header,
+hgroup,
+footer,
+img,
+figure,
+figcaption,
+address,
+time,
+audio,
+video,
+canvas,
+iframe,
+details,
+summary,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* --------------------------------
+* anchor
+* -------------------------------- */
+a {
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+    vertical-align: baseline;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    outline-width: 0;
+}
+
+/* --------------------------------
+* abbr
+* -------------------------------- */
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+/* --------------------------------
+* blockquote
+* -------------------------------- */
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+/* --------------------------------
+* button
+* -------------------------------- */
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    outline: none;
+    padding: 0;
+}
+
+/* --------------------------------
+* del
+* -------------------------------- */
+del {
+    text-decoration: line-through;
+}
+
+/* --------------------------------
+* h1 - h6
+* -------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: bold;
+    display: block;
+}
+
+/* --------------------------------
+* hr + i
+* -------------------------------- */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+i {
+    display: block;
+}
+
+/* --------------------------------
+* img
+* -------------------------------- */
+img {
+    border: none;
+    border-style: none;
+    height: auto;
+    max-height: 100%;
+    vertical-align: top;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+/* --------------------------------
+* input
+* -------------------------------- */
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+}
+
+input[type=text],
+input[type=search],
+input[type=tel],
+input[type=url],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=datetime],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=number],
+input[type=submit],
+input[type=button] {
+    max-width: 100%;
+}
+
+input:focus,
+textarea:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+input[type=radio]:checked+label {
+    background: #ff0000;
+}
+
+input[type=submit] {
+    text-decoration: none;
+}
+
+/* --------------------------------
+* ins
+* -------------------------------- */
+ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
+}
+
+/* --------------------------------
+* list
+* -------------------------------- */
+li,
+ol {
+    list-style: none;
+    list-style-type: none;
+}
+
+/* --------------------------------
+* label + legend
+* -------------------------------- */
+label {
+    cursor: pointer;
+}
+
+legend {
+    color: #000;
+}
+
+/* --------------------------------
+* mark
+* -------------------------------- */
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* --------------------------------
+* select
+* -------------------------------- */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    padding: 0;
+}
+
+/* --------------------------------
+* table
+* -------------------------------- */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* --------------------------------
+* textarea
+* -------------------------------- */
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    padding: 0;
+    resize: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+[disabled] {
+    cursor: not-allowed;
+}
+
+[hover] {
+    border: none;
+    outline: none;
+}

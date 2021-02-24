@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>オリジナルテーマ</title>
+    <meta name="description" content="ディスクリプション">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="apple-touch-icon" href="./img/favicon.ico" sizes="180x180">
+    <!-- JP Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Global Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+
+<body id="top" data-focus-visible="false" style="height: 2000px;">
+    <div class="wrapper">
+        <noscript class="noscript__encourage">
+            <p>当ホームページは、「Javascript」を使用しております。<br>
+                「JavaScript」をONにしてご利用ください。</p>
+        </noscript>
+        <header class="header" role="banner">
+            <div class="mod-header__main">
+                <div class="mod-header__inner ly-inner">
+                    <div class="mod-header__logo">
+                        <h1 class="mod-header__hedding">
+                            <a href="" class="logoLink__top" rel="home">
+                                HEADER LOGO
+                            </a>
+                        </h1>
+                    </div>
+                    <!-- <div class="mod-header__description">
+                        <p>Junichi Takabatake テーマ</p>
+                    </div> -->
+                    <nav class="mod-header-nav" role="navigation">
+                        <ul class="mod-header-nav__list" aria-hidden="false">
+                            <li class="-navItem touch-hover"><a href="#">Home</a></li>
+                            <li class="-navItem"><a href="#">About</a></li>
+                            <li class="-navItem"><a href="#">Service</a></li>
+                            <li class="-navItem"><a href="#">Blog</a></li>
+                            <li class="-navItem -contactItem"><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="mod-drawer__container">
+                <button type="button" class="mod-drawer__button" aria-controls="drawer-nav" aria-label="モバイルメニュー"
+                    aria-expanded="false">
+                    <span class="button-line button-line--1"></span>
+                    <span class="button-line button-line--2"></span>
+                    <span class="button-line button-line--3"></span>
+                </button>
+                <div class="mod-drawer__overlay" data-focus-visible="false"></div>
+                <nav id="drawer-nav" class="mod-drawer__navigation">
+                    <ul class="mod-drawer-nav__list" aria-hidden="true">
+                        <li class="-navItem"><a href="#">Home</a></li>
+                        <li class="-navItem"><a href="#">About</a></li>
+                        <li class="-navItem"><a href="#">Service</a></li>
+                        <li class="-navItem"><a href="#">Blog</a></li>
+                        <li class="-navItem -contactItem"><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="pageMain" role="main">
+
+            <section class="mod-topMainvisual">
+                <div class="mod-topMainvisual__contnets">
+                    <div class="mod-topMainvisual__images">
+                        <ul class="topMainvisual__list">
+                            <!-- first-child 連番を付与 -->
+                            <li class="topMainvisual__item" style="background-image: url();">
+                                <!-- 連番を付与 item-face-01 ~ item-face-05など -->
+                                <div class="topMainvisual__item--face">
+                                    <!-- これも連番 -->
+                                    <div class="topMainvisual__item--caption"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer class="mod-footer__Main" role="contentinfo">
+        <div class="ly-inner">
+            <p class="mod-footer__Main--copy">&copy;</p>
+        </div>
+    </footer>
+
+    <!-- TopScroll-btn -->
+    <button class="c-topScroll-btn js-topScroll-btn" type="button">
+        <span class="topScroll-Icon"></span>
+    </button>
+
+    <script src="./js/drawer.js"></script>
+    <script src="./js/hover.js"></script>
+    <script src="./js/topScroll.js"></script>
+    <script src="./js/noopener.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
