@@ -31,20 +31,25 @@ class Drawer {
         this.headerNaviList = document.querySelector(`.${o.headerNaviList}`);
         this.headerLogo = document.querySelector(`.${o.headerLogo}`);
         this.deskTopMatched = window.matchMedia(`${o.ariaHiddenWindow}`).matches;
-        if (this.drawerButton == null) {
-            return;
-        }
-        const addEvent = window.ontouchstart ? "touchstart" : "click";
-        this.drawerButton.addEventListener(addEvent, (e) => {
+        this.addDeviceEvent = this._addeventMatchDevice();
+
+        this._drawerButtonClick();
+        this._drawerOverlayClick();
+        this._headerReadnaviList();
+    }
+
+    _drawerButtonClick() {
+        this.drawerButton.addEventListener(this.addDeviceEvent, (e) => {
             e.preventDefault();
             this._settingAttribute();
             this._focusVisibleSetting();
         });
-        this.drawerOverlay.addEventListener(addEvent, (e) => {
+    }
+    _drawerOverlayClick() {
+        this.drawerOverlay.addEventListener(this.addDeviceEvent, (e) => {
             this._settingAttribute();
             this._focusVisibleSetting();
         });
-        this._headerReadnaviList();
     }
     /***
      * アクセシビリティの追加
@@ -74,13 +79,14 @@ class Drawer {
         });
     }
     _headerReadnaviList() {
-        if (this.drawerNaviList == null) {
-            return;
-        }
+        if (this.drawerNaviList == null) return;
         if (this.deskTopMatched) {
             this.headerNaviList.setAttribute("aria-hidden", "false");
         } else {
             this.headerNaviList.setAttribute("aria-hidden", "ture");
         }
+    }
+    _addeventMatchDevice() {
+        return window.ontouchstart ? "touchstart" : "click";
     }
 }

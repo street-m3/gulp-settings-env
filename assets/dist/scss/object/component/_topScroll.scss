@@ -13,7 +13,6 @@
     background: g.$color-primary;
     opacity: 0;
     pointer-events: none;
-    pointer-events: auto;
     transition: g.$transitionAll;
     z-index: g.z(topScroll-btn);
 
