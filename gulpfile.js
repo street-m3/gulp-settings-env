@@ -4,6 +4,7 @@ const sass = require('gulp-sass');
 sass.compiler = require("dart-sass");
 const postcss = require('gulp-postcss');
 const autoprefixer = require('gulp-autoprefixer');
+const mqpacker = require("css-mqpacker");
 const csscomb = require('gulp-csscomb');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync');
@@ -40,6 +41,7 @@ function sassCompile() {
         }))
         .pipe(postcss([autoprefixer]))
         .pipe(csscomb())
+        .pipe(postcss([mqpacker()]))
         .pipe(sourcemaps.write('.'))
         .pipe(dest(paths.css_dist))
 }
@@ -54,7 +56,8 @@ function startAppserver() {
         }
     })
     watch(paths.scssAll, sassCompile);
-    watch(paths.scssAll).on('change', server.reload);
+    watch(paths.srcFolder, copyFiles);
+    watch(paths.srcFolder).on('change', server.reload);
 }
 
 exports.copyFiles = copyFiles;
