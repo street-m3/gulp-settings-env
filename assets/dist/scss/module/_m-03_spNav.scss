@@ -19,7 +19,7 @@
 
         @media screen and (max-width: 767px) {
             top: 16px;
-            
+
         }
 
         @media screen and (max-width: 576px) {
@@ -77,6 +77,7 @@
         }
     }
 
+    // drawer-open => overlay
     .mod-drawer__overlay {
         background-color: #000;
         cursor: pointer;
@@ -96,7 +97,7 @@
         }
     }
 
-    .mod-drawer__navigation {
+    .mod-drawer-nav {
         .mod-drawer-nav__list {
             background-color: #fff;
             font-family: "Noto Sans JP", serif;
@@ -116,10 +117,12 @@
                 right: 0;
             }
 
-            & .-navItem a {
-                display: inline-block;
-                padding: 14px 24px;
-                width: 100%;
+            .navItem {
+                a {
+                    display: inline-block;
+                    padding: 14px 24px;
+                    width: 100%;
+                }
             }
         }
     }

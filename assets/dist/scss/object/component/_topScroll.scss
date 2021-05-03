@@ -1,30 +1,30 @@
 @use './../../global' as g;
 
 .c-topScroll-btn {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    position: fixed;
-    right: 20px;
-    bottom: 16px;
-    width: 50px;
-    height: 50px;
-    border: none;
     background: g.$color-primary;
+    bottom: 16px;
+    border: none;
+    display: flex;
+    height: 50px;
+    justify-content: center;
     opacity: 0;
     pointer-events: none;
+    position: fixed;
+    right: 20px;
     transition: g.$transitionAll;
+    width: 50px;
     z-index: g.z(topScroll-btn);
 
     .topScroll-Icon {
+        border-left: 1px solid g.$white;
+        border-top: 1px solid g.$white;
         display: block;
         position: relative;
         top: 5px;
-        width: 16px;
-        height: 16px;
-        border-top: 1px solid g.$white;
-        border-left: 1px solid g.$white;
         transform: rotate(45deg);
+        height: 16px;
+        width: 16px;
     }
 
     &.is-topScroll {
