@@ -1,58 +1,124 @@
 'use strict';
-const accordionVariables = {
-    tabs: 'js-accordion-header',
-    panels: 'js-accordion-panel',
-    addCls: 'is-open-panel',
-    duration: '.3s',
-    timingFunction: 'ease-out',
-    multiSelectable: true,//ここをtrueにするとその他のパネルが閉じる設定
-}
 
-const accordionItemTabs = document.querySelectorAll(`.${accordionVariables.tabs}`);
-const accordionItemPanels = document.querySelectorAll(`.${accordionVariables.panels}`);
+const accordionItemHeaders = document.querySelectorAll(".js-accordion-header");
 
-accordionItemTabs.forEach(elem => {
-    elem.addEventListener('click', (e) => {
-        e.preventDefault;
+accordionItemHeaders.forEach(accordionItemHeader => {
+    accordionItemHeader.addEventListener("click", event => {
 
-        if (accordionVariables.multiSelectable == true) {
-            const currentlyPanel = document.querySelector(`.${accordionVariables.tabs}` + `.${accordionVariables.addCls}`);
-            if (currentlyPanel && currentlyPanel !== elem) {
-                currentlyPanel.classList.toggle(accordionVariables.addCls);
-                currentlyPanel.nextElementSibling.style.maxHeight = 0;
-                currentlyPanel.setAttribute('aria-expanded', 'false');
-                currentlyPanel.nextElementSibling.setAttribute('aria-hidden', 'true');
-            }
+        // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
+
+        const currentlyActiveAccordionItemHeader = document.querySelector(".js-accordion-header.is-open-panel");
+        if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader !== accordionItemHeader) {
+            currentlyActiveAccordionItemHeader.classList.toggle("is-open-panel");
+            currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
         }
 
-        elem.classList.toggle(accordionVariables.addCls);
-        const panelBody = elem.nextElementSibling;
-        if (elem.classList.contains(accordionVariables.addCls)) {
-            panelBody.style.maxHeight = panelBody.scrollHeight + "px";
-            panelBody.style.transition = `max-height ${accordionVariables.duration} ${accordionVariables.timingFunction}`;
-            elem.setAttribute('aria-expanded', "true");
-            panelBody.setAttribute('aria-hidden', 'false');
+        accordionItemHeader.classList.toggle("is-open-panel");
+        const accordionItemBody = accordionItemHeader.nextElementSibling;
+        if (accordionItemHeader.classList.contains("is-open-panel")) {
+            accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
         } else {
-            panelBody.style.maxHeight = 0;
-            elem.setAttribute('aria-expanded', "false");
-            panelBody.setAttribute('aria-hidden', 'true');
+            accordionItemBody.style.maxHeight = 0;
         }
+
     });
 });
 
-function settingAttributes() {
-    const randomId = 'accordion';
-    accordionItemTabs.forEach((tab, index) => {
-        tab.setAttribute('id', `${randomId}-tab-${index}`);
-        tab.setAttribute('aria-expanded', "false");
-        tab.setAttribute('aria-controls', `${randomId}-panel-${index}`);
-    });
-    accordionItemPanels.forEach((panel, index) => {
-        panel.setAttribute('id', `${randomId}-panel-${index}`);
-        panel.setAttribute('aria-hidden', 'true');
-        panel.style.overflow = 'hidden';
-        panel.style.boxSizing = 'border-box';
-        panel.style.maxHeight = 0;
-    })
+
+/**
+ * <div class="p-accordion-item">
+    <div class="p-accordion-header js-accordion-header">
+        <button type="button" class="p-accordion-tab">
+            見積は無料ですか？
+            <span class="p-accordion-tabicon"></span>
+        </button>
+    </div>
+    <div class="p-accordion-panel js-accordion-panel">
+        <div class="p-accordion-content">
+            無料です。金額を知りたいだけなどでも、できる限りお答えしております。
+        </div>
+    </div>
+</div>
+
+<style>
+.p-accordion-item {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #333;
 }
-settingAttributes();
+.p-accordion-item + .p-accordion-item {
+    margin-top: 30px;
+}
+
+.p-accordion-tab {
+    display: flex;
+    align-items: center;
+    height: 68px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+    position: relative;
+    padding: 0 68px 0 30px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.p-accordion-tab::before {
+    content: 'Q';
+    display: block;
+    color: #D33429;
+    font-size: 18px;
+    font-weight: bold;
+    width: 1em;
+    line-height: 1;
+    margin-top: -0.2em;
+    margin-right: 15px;
+}
+
+.p-accordion-tabicon {
+    display: inline-block;
+    height: 68px;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 68px;
+    background-color: #49403C;
+}
+
+.p-accordion-tabicon::before,
+.p-accordion-tabicon::after {
+    background-color: #ffffff;
+    bottom: 0;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+}
+
+.p-accordion-tabicon::after {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-out 0s;
+}
+
+.p-accordion-header.is-open-panel .p-accordion-tabicon::after {
+    transform: rotate(180deg);
+}
+
+.p-accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.p-accordion-content {
+    padding: 30px 50px;
+    background-color: #F7E6E1;
+}
+</style>
+ */
