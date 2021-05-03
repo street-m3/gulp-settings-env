@@ -1,45 +1,57 @@
 'use strict';
 const { src, dest, watch } = require('gulp');
-const sass = require('gulp-sass');
-sass.compiler = require("dart-sass");
-const postcss = require('gulp-postcss');
-const autoprefixer = require('gulp-autoprefixer');
-const mqpacker = require("css-mqpacker");
-const csscomb = require('gulp-csscomb');
-const rename = require('gulp-rename');
-const uglify = require('gulp-uglify');
-const sourcemaps = require('gulp-sourcemaps');
-const browserSync = require('browser-sync');
-const server = browserSync.create();
-const plumber = require('gulp-plumber');
+const sass          = require('gulp-sass');
+      sass.compiler = require("dart-sass");
+const postcss       = require('gulp-postcss');
+const autoprefixer  = require('gulp-autoprefixer');
+const mqpacker      = require("css-mqpacker");
+const csscomb       = require('gulp-csscomb');
+const rename        = require('gulp-rename');
+const uglify        = require('gulp-uglify');
+const sourcemaps    = require('gulp-sourcemaps');
+const browserSync   = require('browser-sync');
+const server        = browserSync.create();
+const plumber       = require('gulp-plumber');
 
 const paths = {
-    workFolder: '20210224__development-init/**/*',
-    srcFolder: './assets/src/**',
-    html: './assets/src/index.html',
-    scssAll: './assets/src/**/*.scss',
-    scss: './assets/src/style.scss',
-    jsAll: './assets/src/js/*.js',
-    minjs: './assets/src/js/*.min.js',
-    img: './assets/src/images/*.{jpg,jpeg,png,gif,svg}',
-    dist: './assets/dist',
-    css_dist: './assets/dist/css',
-    js_dist: './assets/dist/js',
-};
+    working: {
+        src:    '20210224__development-init/**/*',
+        dist:   './assets/dist',
+        develop:'./assets/src/**',
+    },
+    html: {
+        src:  './assets/src/*.html',
+        dist: './assets/dist'
+    },
+    styles: {
+        src:  './assets/src/**/*.scss',
+        main: './assets/src/style.scss',
+        dist: './assets/dist/css',
+    },
+    scripts: {
+        src:    './assets/src/js/*.js',
+        dist:   './assets/dist/js',
+        minify: './assets/src/js/*.min.js',
+    },
+    images: {
+        src: './assets/src/images/*.{jpg,jpeg,png,gif,svg}',
+        dist:   './assets/dist/images',
+    }
+}
 
 /**
  * src Folderのファイルをコピーして、distに出力
  */
 const copyFiles = () => {
-    return src(paths.srcFolder, !paths.scssAll)
-    .pipe(dest(paths.dist))
+    return src(paths.working.develop, !paths.styles.src, !paths.scripts.src)
+    .pipe(dest(paths.working.dist))
 }
 
 /**
  * scssファイルをコンパイル
  */
 const sassCompile = () => {
-    return src(paths.scss)
+    return src(paths.styles.main)
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'expanded'
@@ -48,15 +60,15 @@ const sassCompile = () => {
         .pipe(csscomb())
         .pipe(postcss([mqpacker()]))
         .pipe(sourcemaps.write('.'))
-        .pipe(dest(paths.css_dist))
+        .pipe(dest(paths.styles.dist))
 }
 
 const scripts = () => {
-    return src(paths.jsAll, !paths.minjs)
-        .pipe(plumber())
+    return src(paths.scripts.src, !paths.scripts.minify)
+        // .pipe(plumber())
         .pipe(uglify())
         .pipe(rename({ extname: '.js' }))
-        .pipe(dest(paths.js_dist))
+        .pipe(dest(paths.scripts.dist))
 }
 
 /**
@@ -65,13 +77,13 @@ const scripts = () => {
 const startAppserver = () => {
     server.init({
         server: {
-            baseDir: paths.dist,
+            baseDir: paths.working.dist,
         }
     })
-    watch(paths.jsAll, scripts);
-    watch(paths.scssAll, sassCompile);
-    watch(paths.srcFolder, copyFiles);
-    watch(paths.srcFolder).on('change', server.reload);
+    watch(paths.styles.src, sassCompile);
+    watch(paths.scripts.src, scripts);
+    watch(paths.working.develop, copyFiles);
+    watch(paths.working.develop).on('change', server.reload);
 }
 
 exports.scripts = scripts;
