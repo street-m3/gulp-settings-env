@@ -60,6 +60,7 @@ summary,
 fieldset,
 form,
 label,
+button,
 legend,
 table,
 caption,
@@ -148,7 +149,6 @@ button {
     cursor: pointer;
     font: inherit;
     outline: none;
-    padding: 0;
 }
 
 /* --------------------------------
@@ -173,7 +173,7 @@ h6 {
 }
 
 /* --------------------------------
-* hr + i
+* hr, italic
 * -------------------------------- */
 hr {
     display: block;
@@ -185,7 +185,7 @@ hr {
 }
 
 i {
-    display: block;
+    display: inline-block;
 }
 
 /* --------------------------------
