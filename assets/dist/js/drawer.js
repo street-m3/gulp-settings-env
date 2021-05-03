@@ -18,7 +18,6 @@ class Drawer {
             drawerOverlay: "mod-drawer__overlay", //background
             drawernaviContainer: "mod-drawer__navigation",
             drawerNaviList: "mod-drawer-nav__list", //ul
-            headerLogo: "mod-header__logo", // logo
             headerNaviList: "mod-header-nav__list", //header nav ul
             ariaHiddenWindow: "(min-width: 992px)" //メディアクエリ
         };
@@ -29,10 +28,13 @@ class Drawer {
         this.drawernaviContainer = document.querySelector(`.${o.drawernaviContainer}`);
         this.drawerNaviList = document.querySelector(`.${o.drawerNaviList}`);
         this.headerNaviList = document.querySelector(`.${o.headerNaviList}`);
-        this.headerLogo = document.querySelector(`.${o.headerLogo}`);
         this.deskTopMatched = window.matchMedia(`${o.ariaHiddenWindow}`).matches;
         this.addDeviceEvent = this._addeventMatchDevice();
 
+        this.init();
+    }
+
+    init() {
         this._drawerButtonClick();
         this._drawerOverlayClick();
         this._headerReadnaviList();
@@ -70,11 +72,9 @@ class Drawer {
             if (elem.getAttribute("data-focus-visible") === "false") {
                 elem.dataset.focusVisible = "true";
                 document.body.style.overflow = "hidden";
-                this.headerLogo.style.pointerEvents = "none";
             } else {
                 elem.dataset.focusVisible = "false";
                 document.body.style.overflow = "";
-                this.headerLogo.style.pointerEvents = "auto";
             }
         });
     }
