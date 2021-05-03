@@ -1,60 +1,64 @@
-'use strict';
-document.addEventListener('DOMContentLoaded', () => {
-    new topScrollingBtnAction();
+window.addEventListener('load', () => {
+    new TopScroll();
 });
 
-/**
- * トップに戻るボタン
- * @constructor
- */
-class topScrollingBtnAction {
+class TopScroll {
     constructor() {
         const o = {
-            topScrollingBtn: 'js-topScroll-btn',
-            pageScrollValue: 140,
-            conditionAddCls: 'is-topScroll',
-            targetElement: 'body'
+            topScrollBtn: 'c-topScroll-button',
+            scrollValue: 140,
+            topscrolladdCls: 'is-topScroll',
         }
-        this.topScrollingBtn = document.querySelector(`.${o.topScrollingBtn}`);
-        this.pageScrollValue = o.pageScrollValue;
-        this.conditionAddCls = o.conditionAddCls;
-        this.targetElement = document.body;
-        this.touchEventType = this._touchEventDeviceType();
-
-        this._scrollButtonStart();
-        this._windowScrollButtonIn();
+        this.topScrollBtn = document.querySelector(`.${o.topScrollBtn}`);
+        this.scrollValue = o.scrollValue;
+        this.topscrolladdCls = o.topscrolladdCls;
+        this.topScroll_init();
     }
 
-    _scrollButtonStart() {
-        if (this.topScrollingBtn == null) return;
-        this.topScrollingBtn.addEventListener(this.touchEventType, (e) => {
-            e.preventDefault();
-            this._smoothScrollBacktoTop();
-        });
+    topScroll_init() {
+        if (this.topScrollBtn == null) return;
+        this.topScrollButton();
+        this.topScrollButtonClickd();
     }
 
-    _windowScrollButtonIn() {
+    topScrollButton() {
         window.addEventListener('scroll', () => {
-            this._effectCondition();
+            if (window.pageYOffset > this.scrollValue) {
+                this.topScrollBtn.classList.add(this.topscrolladdCls);
+            } else {
+                this.topScrollBtn.classList.remove(this.topscrolladdCls);
+            }
         });
     }
 
-    _effectCondition() {
-        if (window.pageYOffset > this.pageScrollValue) {
-            this.topScrollingBtn.classList.add(this.conditionAddCls);
-        } else {
-            this.topScrollingBtn.classList.remove(this.conditionAddCls);
-        }
-    }
-
-    _smoothScrollBacktoTop() {
-        this.targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+    topScrollButtonClickd() {
+        this.topScrollBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            _smoothScroll(0);
         });
-    }
-
-    _touchEventDeviceType() {
-        return window.ontouchstart ? "touchstart" : "click";
     }
 }
+
+function _smoothScroll(position) {
+    let targetPosition = position;
+    let startPosition = window.pageYOffset;
+    let distance = targetPosition - startPosition;
+    let duration = 750;
+    let start = null;
+
+    window.requestAnimationFrame(step);
+
+    function step(timestamp) {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+        if (progress < duration) window.requestAnimationFrame(step);
+    }
+}
+
+function easeInOutCubic(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t * t + b;
+    t -= 2;
+    return c / 2 * (t * t * t + 2) + b;
+};
