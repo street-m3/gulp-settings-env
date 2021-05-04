@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * target_blankを取得 rel属性の付与
+ * brを取得 aria-hiddenの追加
  */
 const textBreaks = () => {
     const breakElements = document.querySelectorAll('br');
