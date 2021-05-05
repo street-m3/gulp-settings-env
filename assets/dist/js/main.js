@@ -1,14 +1,1 @@
-'use strict';
-
-/**
- * brを取得 aria-hiddenの追加
- */
-const textBreaks = () => {
-    const breakElements = document.querySelectorAll('br');
-    breakElements.forEach(element => {
-        if (element.hasAttribute('aria-hidden') !== false) return;
-        element.setAttribute('aria-hidden', 'true');
-    });
-}
-
-textBreaks();
+"use strict";const textBreaks=()=>{const t=document.querySelectorAll("br");t.forEach(t=>{!1===t.hasAttribute("aria-hidden")&&t.setAttribute("aria-hidden","true")})};textBreaks();
