@@ -6,7 +6,7 @@
 const textBreaks = () => {
     const breakElements = document.querySelectorAll('br');
     breakElements.forEach(element => {
-        if (element.hasAttribute('aria-hidden') !== false) return;
+        if (element.hasAttribute('aria-hidden') !== 'false') return;
         element.setAttribute('aria-hidden', 'true');
     });
 }
