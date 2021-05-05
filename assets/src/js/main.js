@@ -3,7 +3,7 @@
 /**
  * brを取得 aria-hiddenの追加
  */
-const textBreaks = () => {
+const lineBreaks = () => {
     const breakElements = document.querySelectorAll('br');
     breakElements.forEach(element => {
         if (element.hasAttribute('aria-hidden') !== 'false') return;
@@ -11,4 +11,4 @@ const textBreaks = () => {
     });
 }
 
-textBreaks();
+lineBreaks();
